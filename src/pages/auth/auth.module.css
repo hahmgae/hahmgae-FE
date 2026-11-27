@@ -1,0 +1,188 @@
+.loginPage {
+    position: relative;
+    min-height: 100%;
+    padding: clamp(40px, calc(var(--app-height) - 629px), 245px) var(--page-padding) 248px;
+    overflow: hidden;
+    background: var(--background);
+}
+
+.loginContent {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    width: 130px;
+    height: 62px;
+    margin: 0 auto 42px;
+    object-fit: contain;
+}
+
+.loginFields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.loginSubmit {
+    display: flex;
+    margin-top: 42px;
+}
+
+.signupLink {
+    display: flex;
+    margin-top: 14px;
+}
+
+.illustrations {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.ownerImage {
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.dogImage {
+    position: absolute;
+    right: calc(50% - 56px);
+    bottom: -13px;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+}
+
+.signupPage {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding-bottom: 45px;
+    background: var(--background);
+}
+
+.header {
+    padding: 50px 40px 28px;
+    border-bottom: 1px solid var(--background);
+}
+
+.title {
+    margin: 0;
+    color: var(--black);
+    font-size: 20px;
+    font-weight: var(--font-semibold);
+    line-height: 24px;
+}
+
+.signupForm {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 23px var(--page-padding) 0;
+}
+
+.accountFields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dogForm {
+    padding-top: 40px;
+}
+
+.dogProfile {
+    display: block;
+    width: 115px;
+    height: 115px;
+    align-self: center;
+    margin-bottom: 40px;
+    object-fit: contain;
+}
+
+.dogFields {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.sizeField {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.sizeLegend {
+    padding: 0;
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-weight: var(--font-medium);
+    line-height: 21px;
+}
+
+.required {
+    color: var(--required);
+}
+
+.radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    margin-top: 12px;
+    padding-inline: 20px;
+}
+
+.radioChoice {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 21px;
+    gap: 9px;
+    color: var(--text-placeholder);
+    font-size: 18px;
+    font-weight: var(--font-medium);
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.radioInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.radioIcon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.radioInput:checked ~ span {
+    color: var(--text-secondary);
+    font-weight: var(--font-semibold);
+}
+
+.radioInput:focus-visible + .radioIcon {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.bottomAction {
+    margin-top: auto;
+    padding-top: 48px;
+}
