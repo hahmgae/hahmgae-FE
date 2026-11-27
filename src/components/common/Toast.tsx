@@ -1,52 +1,24 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import styles from './common.module.css';
 
-type ToastState = {
-  id: number;
-  message: string;
-  duration: number;
+type ToastProps = {
+    message: string | null;
+    messageId?: number;
 };
 
-export default function useToast() {
-  const [toast, setToast] = useState<ToastState | null>(null);
-  const nextId = useRef(0);
-
-  const showToast = useCallback((message: string, duration = 2500) => {
-    if (!message.trim()) {
-      return;
+export default function Toast({ message, messageId }: ToastProps) {
+    if (typeof document === 'undefined') {
+        return null;
     }
 
-    nextId.current += 1;
-
-    setToast({
-      id: nextId.current,
-      message,
-      duration,
-    });
-  }, []);
-
-  const hideToast = useCallback(() => {
-    setToast(null);
-  }, []);
-
-  useEffect(() => {
-    if (!toast || toast.duration <= 0) {
-      return;
-    }
-
-    const currentId = toast.id;
-
-    const timer = window.setTimeout(() => {
-      setToast((current) => (current?.id === currentId ? null : current));
-    }, toast.duration);
-
-    return () => {
-      window.clearTimeout(timer);
-    };
-  }, [toast]);
-
-  return {
-    toast,
-    showToast,
-    hideToast,
-  };
+    return createPortal(
+        <div className={styles.toastViewport} role="status" aria-live="polite" aria-atomic="true">
+            {message && (
+                <p key={messageId} className={styles.toast}>
+                    {message}
+                </p>
+            )}
+        </div>,
+        document.body,
+    );
 }
