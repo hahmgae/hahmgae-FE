@@ -1,0 +1,175 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 58px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 15px;
+  background: var(--primary);
+  color: var(--background);
+  font-size: 24px;
+  font-weight: var(--font-regular);
+  line-height: normal;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.walk {
+  color: var(--white);
+  font-size: 22px;
+}
+
+.link {
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-placeholder);
+  font-size: 18px;
+  font-weight: var(--font-medium);
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.button:disabled {
+  opacity: 0.4;
+}
+
+.button:active:not(:disabled),
+.iconButton:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.button:focus-visible,
+.iconButton:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+}
+
+.iconButton img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.round {
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+}
+
+.field {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: var(--font-medium);
+  line-height: normal;
+}
+
+.required {
+  color: var(--required);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 58px;
+  padding: 0 20px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: var(--font-medium);
+  line-height: normal;
+}
+
+.loginInput {
+  height: 64px;
+}
+
+.input::placeholder {
+  color: var(--text-placeholder);
+  opacity: 1;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.toastViewport {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  bottom: 90px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--app-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+  pointer-events: none;
+}
+
+.toast {
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: var(--toast-background);
+  color: var(--text-caption);
+  font-size: 18px;
+  font-weight: var(--font-regular);
+  line-height: normal;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
