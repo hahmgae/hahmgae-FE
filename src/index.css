@@ -90,7 +90,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    background: var(--background);
+    background: var(--white);
     color: var(--text-primary);
     font-family: 'Pretendard', sans-serif;
     font-weight: var(--font-regular);
